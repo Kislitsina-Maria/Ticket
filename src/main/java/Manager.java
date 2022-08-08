@@ -8,6 +8,7 @@ public class Manager {
     }
 
     public Ticket[] findAll(String from, String to) {
+        TicketByTravelTimeComparator travelTimeComporator = new TicketByTravelTimeComparator();
         Ticket[] result = new Ticket[0];
         for (Ticket each : repo.find()) {
             if (each.getDeparture() == from && each.getArrival() == to) {
@@ -19,7 +20,7 @@ public class Manager {
                 result = tmp;
             }
         }
-        Arrays.sort(result);
+        Arrays.sort(result, travelTimeComporator);
         return result;
     }
 }
