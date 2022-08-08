@@ -48,6 +48,11 @@ public class Ticket implements Comparable<Ticket> {
     protected int price;
     protected String departure;
     protected String arrival;
+
+    public int getTravelTime() {
+        return travelTime;
+    }
+
     protected int travelTime;
 
 

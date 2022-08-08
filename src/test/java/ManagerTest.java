@@ -6,10 +6,10 @@ public class ManagerTest {
 
     Manager manager = new Manager();
     Ticket ticket1 = new Ticket(1, 2344, "tgg", "YYY", 566);
-    Ticket ticket2 = new Ticket(2, 66767, "TTT", "YYY", 4563);
+    Ticket ticket2 = new Ticket(2, 27, "TTT", "YYY", 210);
     Ticket ticket3 = new Ticket(3, 234, "FFF", "HJH", 45630);
-    Ticket ticket4 = new Ticket(2, 27, "TTT", "YYY", 4563);
-    Ticket ticket5 = new Ticket(2, 667, "TTT", "YYY", 4563);
+    Ticket ticket4 = new Ticket(4, 27, "TTT", "YYY", 70);
+    Ticket ticket5 = new Ticket(5, 667, "TTT", "YYY", 370);
 
     @BeforeEach
     public void addTicket() {
@@ -21,8 +21,8 @@ public class ManagerTest {
     }
 
     @Test
-    public void findAllTicket() {
-        Ticket[] expected = {ticket4, ticket5, ticket2};
+    public void findTicketByTravelTime() {
+        Ticket[] expected = {ticket4, ticket2, ticket5};
         Ticket[] actual = manager.findAll("TTT", "YYY");
         Assertions.assertArrayEquals(expected, actual);
     }
