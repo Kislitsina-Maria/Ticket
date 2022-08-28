@@ -1,6 +1,6 @@
 public class Ticket implements Comparable<Ticket> {
 
-    public Ticket(int id, int price, String departure, String arrival, int travelTime) {
+    protected Ticket(int id, int price, String departure, String arrival, int travelTime) {
         this.id = id;
         this.price = price;
         this.departure = departure;
@@ -8,20 +8,20 @@ public class Ticket implements Comparable<Ticket> {
         this.travelTime = travelTime;
     }
 
-    public Ticket() {
+    protected Ticket() {
     }
 
-    public int getId() {
+    protected int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    protected void setId(int id) {
         this.id = id;
     }
 
-    protected int id;
+    private int id;
 
-    public int getPrice() {
+    protected int getPrice() {
         return price;
     }
 
@@ -29,26 +29,26 @@ public class Ticket implements Comparable<Ticket> {
         this.price = price;
     }
 
-    public String getDeparture() {
+    protected String getDeparture() {
         return departure;
     }
 
-    public void setDeparture(String departure) {
+    protected void setDeparture(String departure) {
         this.departure = departure;
     }
 
-    public String getArrival() {
+    protected String getArrival() {
         return arrival;
     }
 
-    public void setArrival(String arrival) {
+    protected void setArrival(String arrival) {
         this.arrival = arrival;
     }
 
-    protected int price;
-    protected String departure;
-    protected String arrival;
-    protected int travelTime;
+    private int price;
+    private String departure;
+    private String arrival;
+    private int travelTime;
 
 
     @Override
