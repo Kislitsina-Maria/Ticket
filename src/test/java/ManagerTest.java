@@ -26,4 +26,19 @@ public class ManagerTest {
         Ticket[] actual = manager.findAll("TTT", "YYY");
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void findOneTicket() {
+        Ticket[] expected = {ticket3};
+        Ticket[] actual = manager.findAll("FFF", "HJH");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void notFindTicket() {
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("YYY", "TTT");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }
